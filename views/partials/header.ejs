@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>E-Seller Site</title>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+    <link rel="styelsheet" type="text/css" href="/stylesheets/main.css">
+</head>
+<body>
+	<nav class="navbar navbar-inverse whole">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a href="/" class="navbar-brand">E-Seller Site</a>
+	    </div>
+	    <ul class="nav navbar-nav">
+	      <li class="active"><a href="/">Home</a></li>
+	    </ul>
+	    <ul class="nav navbar-nav navbar-right">
+	    	<% if(!currentUser && !currentAdmin){ %>
+	    		<li><a href="/cart"><span class="glyphicon glyphicon-shopping-cart"></span> Go to Cart </a></li>
+	    		<li class="dropdown">
+			        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Sign Up<span class="caret"></span></a>
+			        <ul class="dropdown-menu">
+			          <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up as User</a></li>
+			          <li><a href="/admin"><span class="glyphicon glyphicon-user"></span> Sign Up as admin</a></li>
+			        </ul>
+			    </li>
+			    <li class="dropdown">
+			        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Log In<span class="caret"></span></a>
+			        <ul class="dropdown-menu">
+						<li><a href="/loginuser"><span class="glyphicon glyphicon-log-in"></span> Login as User</a></li>
+						<li><a href="/loginadmin"><span class="glyphicon glyphicon-log-in"></span> Login as Admin</a></li>
+					</ul>
+				</li>
+     		<% } else{ %>
+     			<li><a href="/cart"><span class="glyphicon glyphicon-shopping-cart"></span> Go to Cart</a></li>
+     			<li><a href="#">Signed in as <%= currentUser.username %></a></li>
+     			<li><a href="/logout">Logout</a></li>
+     		<% } %>
+     	</ul>
+	  </div>
+	</nav>
+	<div class="container">
+		<% if(error && error.length>0){ %>        <% /* empty array is true , so length>0 is checked */ %>
+			<div class="alert alert-danger" role="alert" id="short">
+				<%= error %>
+			</div>
+		<% } %>
+		<% if(success && success.length>0){ %>
+			<div class="alert alert-success" role="alert" id="short">
+				<%= success %>
+			</div>
+		<% } %>
+	</div>
+	<div class="container">
+
+
+	

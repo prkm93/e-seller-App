@@ -1,0 +1,34 @@
+<% include ../../partials/header %>
+
+<div class="container-fluid">
+	<div class="row text-center">
+			<div class="col-lg-10">
+				<div class="thumbnail">
+					<h2><b> <%=cloth.category %> </b></h2>
+					<h3> <%= cloth.name %> </h3>
+					<img src="<%= cloth.image %>" class="img-responsive" width="250px" height="250px">
+					<div class="caption">
+						<div class="well">
+							<ul>
+								<li><b>Features :</b> <%= cloth.features %> </li>
+							</ul>
+							<p><b>Price :</b> <%= cloth.price %> </p>
+							<p><b>Color:</b> <%= cloth.color %> </p>
+							<p><b>Size:</b> <%= cloth.size %> </p>
+							<p><b>Seller:</b> <%= cloth.seller %> </p>
+							<p clsss="description"><b>Description:</b> <br> <%= cloth.description %> </p>
+							<a class="btn btn-warning btn-sm" href="/clothes/<%= cloth._id %>/edit">
+								Edit  Details
+							</a>
+							<form style="display:inline;" action="/clothes/<%= cloth._id %>?_method=DELETE" method="POST">
+								<button class="btn btn-danger btn-sm">Delete this product</button>
+							</form>
+						</div>
+					</div>
+				<a href="/clothes">Go back</a>	
+				</div>
+			</div>
+	</div>
+</div>
+
+<% include ../../partials/footer %>

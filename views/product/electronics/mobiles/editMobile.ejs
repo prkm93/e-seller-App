@@ -1,0 +1,51 @@
+<% include ../../../partials/header %>
+
+	<div class="container">
+	    <div class="row">    
+	        <h1 style="text-align:center;"> 
+	          Edit Product Details
+	        </h1>
+	        <div style="width: 30%; margin: 25px auto;">
+				<form action="/electronics/mobiles/<%= mobile._id %>?_method=PUT" method="POST">
+					<div class="formgroup">
+						<label>Category</label>
+						<input type="text" class="form-control" name="mobile[category]" value="<%= mobile.category %>">
+					</div>
+					<div class="formgroup">
+						<label>Name</label>
+						<input type="text" class="form-control" name="mobile[name]" value="<%= mobile.name %>">
+					</div>
+					<div class="formgroup">
+						<label>Image</label>
+						<input type="text" class="form-control" name="mobile[image]" value="<%= mobile.image %>">
+					</div>
+					<div class="formgroup">
+						<label>Description</label>
+						<textarea class="form-control" rows="8" name="mobile[description]"><%= mobile.description %></textarea>
+					</div>
+					<div class="formgroup">
+						<label>Price</label>
+						<input type="text" class="form-control" name="mobile[price]" value="<%= mobile.price %>">
+					</div>
+					<div class="formgroup">
+						<label>Features</label>
+						<input type="text" class="form-control" rows="8" name="mobile[features]" value="<%= mobile.features %>">
+					<div><br>
+					<div class="formgroup">
+						<label>Color</label>
+						<input type="text" class="form-control" name="mobile[color]" value="<%= mobile.color %>">
+					</div>
+					<div class="formgroup">
+						<label>Sold By:</label>
+						<input type="text" class="form-control" name="mobile[seller]" value="<%= mobile.seller %>">
+					</div><br>
+					<div class="formgroup">
+						<button class="btn btn-lg btn-primary btn-block">Submit</button>
+					</div>
+				</form>
+				<a href="/electronics/mobiles">Go back</a>
+			</div>
+		</div>
+	</div>
+
+<% include ../../../partials/footer %>

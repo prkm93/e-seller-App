@@ -1,0 +1,50 @@
+<% include ../../../partials/header %>
+
+	<div class="container">
+	    <div class="row">    
+	        <h1 style="text-align:center;"> 
+	           Add New Product
+	        </h1>
+	        <div style="width: 30%; margin: 25px auto;">
+				<form action="/electronics/laptops" method="POST">
+					<div class="formgroup">
+						<label>Category</label>
+						<input type="text" class="form-control" name="laptop[category]" placeholder="Category">
+					</div>
+					<div class="formgroup">
+						<label>Name</label>
+						<input type="text" class="form-control" name="laptop[name]" placeholder="Name">
+					</div>
+					<div class="formgroup">
+						<label>Image</label>
+						<input type="text" class="form-control" name="laptop[image]" placeholder="Image">
+					</div>
+					<div class="formgroup">
+						<label>Description</label>
+						<textarea class="form-control" name="laptop[description]"></textarea>
+					</div>
+					<div class="formgroup">
+						<label>Price</label>
+						<input type="text" class="form-control" name="laptop[price]" placeholder="Price">
+					</div>
+					<div class="formgroup">
+						<label>Features</label>
+						<input type="text" class="form-control" rows="8" name="laptop[features]" placeholder="Features">
+					<div><br>
+					<div class="formgroup">
+						<label>Color</label>
+						<input type="text" class="form-control" name="laptop[color]" placeholder="Color">
+					</div>
+					<div class="formgroup">
+						<label>Sold By:</label>
+						<input type="text" class="form-control" name="laptop[seller]" placeholder="Seller">
+					</div><br>
+					<div class="formgroup">
+						<button class="btn btn-lg btn-primary btn-block">Submit</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+<% include ../../../partials/footer %>

@@ -1,0 +1,34 @@
+<% include ../../../partials/header %>
+
+<h1>all laptops</h1>
+<a href="/electronics/laptops/new"> Add new laptop</a>
+
+<div class="container-fluid">
+	<div class="row text-center">
+		<% laptop.forEach(function(l){ %>
+			<% if (l.category === "laptops") { %>
+			<div class="col-lg-6">
+				<div class="thumbnail">
+					<h2><b> <%= l.category %> </b></h2>
+					<h3> <%= l.name %> </h3>
+					<img src="<%= l.image %>" width="150px" height="150px">
+					<div class="caption">
+						<ul>
+							<li><b>Features :</b> <%= l.features %> </li>
+						</ul>
+						<p><b>Price :</b> <%= l.price %> </p>
+						<p><b>Color:</b> <%= l.color %> </p>
+						<p><b>Seller:</b> <%= l.seller %> </p>
+						<p><b>Description:</b> <br> <%= l.description.substring(0,50) %> </p>
+						 <div class="clearfix">
+						 	<a href="/electronics/laptops/<%= l._id %>" class="btn btn-primary">More Info  <span class="glyphicon glyphicon-chevron-right"></span></a> 
+						 	<a href="/electronics/laptops/<%= l._id %>/cart" class="btn btn-success pull-right" role="button"> Add to Cart </a> 
+						</div>
+					</div> 
+				</div>
+			</div> <% } %>
+		<% }) %>
+	</div>
+</div>
+
+<% include ../../../partials/footer %>

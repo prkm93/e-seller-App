@@ -1,0 +1,35 @@
+<% include ../../partials/header %>
+
+<h1>View all clothes</h1>
+
+<a href="/clothes/new"> Add new cloth</a>
+
+<div class="container-fluid">
+	<div class="row text-center">
+		<% cloth.forEach(function(cl){ %>
+			<% if (cl.category === "clothes") { %>
+			<div class="col-lg-6">
+				<div class="thumbnail">
+					<h2><b> <%= cl.category %> </b></h2>
+					<h3> <%= cl.name %> </h3>
+					<img src="<%= cl.image %>" width="150px" height="150px">
+					<div class="caption">
+						<ul>
+							<li><b>Features :</b> <%= cl.features %> </li>
+						</ul>
+						<p><b>Price :</b>Rs.<%= cl.price %> </p>
+						<p><b>Color:</b> <%= cl.color %> </p>
+						<p><b>Seller:</b> <%= cl.seller %> </p>
+						<p><b>Description:</b> <br> <%= cl.description.substring(0,50) %> ... </p>
+						<div class="clearfix">
+							 <a href="/clothes/<%= cl._id %>" class="btn btn-primary">More Info  <span class="glyphicon glyphicon-chevron-right"></span> </a>
+							 <a href="/clothes/<%= cl._id %>/cart" class="btn btn-success pull-right" role="button"> Add to Cart </a> 
+						</div>
+					</div> 
+				</div>
+			</div> <% } %>
+		<% }) %>
+	</div>
+</div>
+
+<% include ../../partials/footer %>

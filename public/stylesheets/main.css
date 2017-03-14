@@ -1,0 +1,12 @@
+html, body{
+	font-family:'Tangerine', cursive;
+}
+#delete-form{
+	display:inline;
+}
+#change{
+	color:red;
+}
+.thumbnail .description{
+	color: maroon;
+}

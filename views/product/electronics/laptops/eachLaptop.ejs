@@ -1,0 +1,32 @@
+<% include ../../../partials/header %>
+
+<div class="container-fluid">
+	<div class="row text-center">
+			<div class="col-lg-10">
+				<div class="thumbnail">
+					<h2><b> <%= laptop.category %> </b></h2>
+					<h3> <%= laptop.name %> </h3>
+					<img src="<%= laptop.image %>" width="250px" height="250px">
+					<div class="caption">
+						<div class="well">
+							<ul>
+								<li><b>Features :</b> <%= laptop.features %> </li>
+							</ul>
+							<p><b>Price :</b> <%= laptop.price %> </p>
+							<p><b>Color:</b> <%= laptop.color %> </p>
+							<p><b>Seller:</b> <%= laptop.seller %> </p>
+							<p><b>Description:</b> <br> <%= laptop.description %> </p>
+							<a class="btn btn-warning btn-sm" href="/electronics/laptops/<%= laptop._id %>/edit">
+								Edit  Details
+							</a>
+							<form style="display:inline;" action="/electronics/laptops/<%= laptop._id %>?_method=DELETE" method="POST">
+								<button class="btn btn-danger btn-sm">Delete this product</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+</div>
+
+<% include ../../../partials/footer %>

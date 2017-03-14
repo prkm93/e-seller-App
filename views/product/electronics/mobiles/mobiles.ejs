@@ -1,0 +1,35 @@
+<% include ../../../partials/header %>
+
+<h1> all mobiles</h1>
+
+<a href="/electronics/mobiles/new"> Add new mobile </a>
+
+<div class="container-fluid">
+	<div class="row text-center">
+		<% mobile.forEach(function(m){ %>
+			<% if (m.category === "Mobile") { %>
+			<div class="col-lg-6">
+				<div class="thumbnail">
+					<h2><b> <%= m.category %> </b></h2>
+					<h3> <%= m.name %> </h3>
+					<img src="<%= m.image %>" width="150px" height="150px">
+					<div class="caption">
+						<ul>
+							<li><b>Features :</b> <%= m.features %> </li>
+						</ul>
+						<p><b>Price :</b> <%= m.price %> </p>
+						<p><b>Color:</b> <%= m.color %> </p>
+						<p><b>Seller:</b> <%= m.seller %> </p>
+						<p><b>Description:</b> <br> <%= m.description.substring(0,50) %> </p>
+						<div class="clearfix">	
+							<a href="/electronics/mobiles/<%= m._id %>" class="btn btn-primary">More Info  <span class="glyphicon glyphicon-chevron-right"></span> </a> 
+							<a href="/electronics/mobiles/<%= m._id %>/cart" class="btn btn-success pull-right" role="button"> Add to Cart </a> 
+						</div>
+					</div> 
+ 				</div>
+			</div> <% } %>
+		<% }) %>
+	</div>
+</div>
+
+<% include ../../../partials/footer %>

@@ -1,0 +1,32 @@
+<% include ../../../partials/header %>
+
+<div class="container-fluid">
+	<div class="row text-center">
+			<div class="col-lg-10">
+				<div class="thumbnail">
+					<h2><b> <%= mobile.category %> </b></h2>
+					<h3> <%= mobile.name %> </h3>
+					<img src="<%= mobile.image %>" width="250px" height="250px">
+					<div class="caption">
+						<div class="well">
+							<ul>
+								<li><b>Features :</b> <%= mobile.features %> </li>
+							</ul>
+							<p><b>Price :</b> <%= mobile.price %> </p>
+							<p><b>Color:</b> <%= mobile.color %> </p>
+							<p><b>Seller:</b> <%= mobile.seller %> </p>
+							<p><b>Description:</b> <br> <%= mobile.description %> </p>
+							<a class="btn btn-warning btn-sm" href="/electronics/mobiles/<%= mobile._id %>/edit">
+								Edit  Details
+							</a>
+							<form style ="display:inline;" id="delete-form" action="/electronics/mobiles/<%= mobile._id %>?_method=DELETE" method="POST">
+								<button class="btn btn-danger btn-sm">Delete this product</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+</div>
+
+<% include ../../../partials/footer %>

@@ -1,0 +1,28 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <div class="row">
+        <h1 style="text-align:center;"> 
+            Adding product to cart
+        </h1>
+        <div style="width: 30%; margin: 25px auto;">
+            <form action="/clothes/<%= cloth._id %>/cart" id="cartform" method="POST">
+               <div class="formgroup">
+					<label>Quantity</label>
+					<input type="number" class="form-control" name="quantity" id="quantity" placeholder="quantity" min="0" step="1" width="50%"><br>
+				</div>
+				<div class="formgroup">
+					<button class="btn btn-lg btn-primary btn-block">Submit</button>
+				</div>
+            </form>
+            <a href="/clothes/<%= cloth._id %>">Go back</a>
+        </div>
+    </div>
+</div>
+<% function getQty() { 
+   var form = document.forms["cartform"] 
+   var qty = form.elements["quantity"] 
+   return qty;
+} %> 
+<% include ../partials/footer %>
+

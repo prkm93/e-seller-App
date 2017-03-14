@@ -1,0 +1,52 @@
+<% include ../../../partials/header %>
+
+	<div class="container">
+	    <div class="row">    
+	        <h1 style="text-align:center;"> 
+	          Edit product details
+	        </h1>
+	        <% if(laptop.category === "laptops"){ %>
+	        <div style="width: 30%; margin: 25px auto;">
+				<form action="/electronics/laptops/<%= laptop._id %>?_method=PUT" method="POST">
+					<div class="formgroup">
+						<label>Category</label>
+						<input type="text" class="form-control" name="laptop[category]" value="<%= laptop.category %>">
+					</div>
+					<div class="formgroup">
+						<label>Name</label>
+						<input type="text" class="form-control" name="laptop[name]" value="<%= laptop.name %>">
+					</div>
+					<div class="formgroup">
+						<label>Image</label>
+						<input type="text" class="form-control" name="laptop[image]" value="<%= laptop.image %>">
+					</div>
+					<div class="formgroup">
+						<label>Description</label>
+						<textarea class="form-control" rows="8" name="laptop[description]"><%= laptop.description %></textarea>
+					</div>
+					<div class="formgroup">
+						<label>Price</label>
+						<input type="text" class="form-control" name="laptop[price]" value="<%= laptop.price %>">
+					</div>
+					<div class="formgroup">
+						<label>Features</label>
+						<input type="text" class="form-control" rows="8" name="laptop[features]" value="<%= laptop.features %>">
+					<div><br>
+					<div class="formgroup">
+						<label>Color</label>
+						<input type="text" class="form-control" name="laptop[color]" value="<%= laptop.color %>">
+					</div>
+					<div class="formgroup">
+						<label>Sold By:</label>
+						<input type="text" class="form-control" name="laptop[seller]" value="<%= laptop.seller %>">
+					</div><br>
+					<div class="formgroup">
+						<button class="btn btn-lg btn-primary btn-block">Submit</button>
+					</div>
+				</form>
+				<a href="/electronics/laptops">Go back</a>
+			</div> <% } %>
+		</div>
+	</div>
+
+<% include ../../../partials/footer %>
